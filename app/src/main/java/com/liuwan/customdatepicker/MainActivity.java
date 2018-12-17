@@ -3,7 +3,6 @@ package com.liuwan.customdatepicker;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.liuwan.customdatepicker.widget.CustomDatePicker;
@@ -13,67 +12,74 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * Created by liuwan on 2016/9/28.
+ * 说明：
+ * 作者：liuwan
+ * 添加时间：2016/9/28
+ * 修改人：liuwan
+ * 修改时间：2018/12/17 13:40
  */
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    private RelativeLayout selectDate, selectTime;
-    private TextView currentDate, currentTime;
-    private CustomDatePicker customDatePicker1, customDatePicker2;
+    private TextView mTvSelectedDate, mTvSelectedTime;
+    private CustomDatePicker mDatePicker, mTimerPicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        selectTime = (RelativeLayout) findViewById(R.id.selectTime);
-        selectTime.setOnClickListener(this);
-        selectDate = (RelativeLayout) findViewById(R.id.selectDate);
-        selectDate.setOnClickListener(this);
-        currentDate = (TextView) findViewById(R.id.currentDate);
-        currentTime = (TextView) findViewById(R.id.currentTime);
-
+        findViewById(R.id.ll_date).setOnClickListener(this);
+        mTvSelectedDate = findViewById(R.id.tv_selected_date);
         initDatePicker();
+
+        findViewById(R.id.ll_time).setOnClickListener(this);
+        mTvSelectedTime = findViewById(R.id.tv_selected_time);
+        initTimerPicker();
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.selectDate:
+            case R.id.ll_date:
                 // 日期格式为yyyy-MM-dd
-                customDatePicker1.show(currentDate.getText().toString());
+                mDatePicker.show(mTvSelectedDate.getText().toString());
                 break;
 
-            case R.id.selectTime:
+            case R.id.ll_time:
                 // 日期格式为yyyy-MM-dd HH:mm
-                customDatePicker2.show(currentTime.getText().toString());
+                mTimerPicker.show(mTvSelectedTime.getText().toString());
                 break;
         }
     }
 
     private void initDatePicker() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.CHINA);
+        final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
         String now = sdf.format(new Date());
-        currentDate.setText(now.split(" ")[0]);
-        currentTime.setText(now);
+        mTvSelectedDate.setText(now);
 
-        customDatePicker1 = new CustomDatePicker(this, new CustomDatePicker.ResultHandler() {
+        mDatePicker = new CustomDatePicker(this, new CustomDatePicker.ResultHandler() {
             @Override
-            public void handle(String time) { // 回调接口，获得选中的时间
-                currentDate.setText(time.split(" ")[0]);
+            public void handle(long timestampMillis) { // 回调接口，获得选中的时间
+                mTvSelectedDate.setText(sdf.format(new Date(timestampMillis)));
             }
         }, "2010-01-01 00:00", now); // 初始化日期格式请用：yyyy-MM-dd HH:mm，否则不能正常运行
-        customDatePicker1.showSpecificTime(false); // 不显示时和分
-        customDatePicker1.setIsLoop(false); // 不允许循环滚动
+        mDatePicker.showSpecificTime(false); // 不显示时和分
+        mDatePicker.setIsLoop(false); // 不允许循环滚动
+    }
 
-        customDatePicker2 = new CustomDatePicker(this, new CustomDatePicker.ResultHandler() {
+    private void initTimerPicker() {
+        final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.CHINA);
+        String now = sdf.format(new Date());
+        mTvSelectedTime.setText(now);
+
+        mTimerPicker = new CustomDatePicker(this, new CustomDatePicker.ResultHandler() {
             @Override
-            public void handle(String time) { // 回调接口，获得选中的时间
-                currentTime.setText(time);
+            public void handle(long timestampMillis) { // 回调接口，获得选中的时间
+                mTvSelectedTime.setText(sdf.format(new Date(timestampMillis)));
             }
         }, "2010-01-01 00:00", now); // 初始化日期格式请用：yyyy-MM-dd HH:mm，否则不能正常运行
-        customDatePicker2.showSpecificTime(true); // 显示时和分
-        customDatePicker2.setIsLoop(true); // 允许循环滚动
+        mTimerPicker.showSpecificTime(true); // 显示时和分
+        mTimerPicker.setIsLoop(true); // 允许循环滚动
     }
 
 }

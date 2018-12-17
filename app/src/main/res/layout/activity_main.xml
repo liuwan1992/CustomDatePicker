@@ -1,84 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color1"
-    android:orientation="vertical">
+    android:background="@color/main_bg"
+    android:orientation="vertical"
+    tools:ignore="RtlSymmetry">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:text="@string/select_date"
+        android:textColor="@color/select_title_text"
+        android:textSize="15sp" />
 
     <LinearLayout
+        android:id="@+id/ll_date"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/color1"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:background="@color/current_time_bg"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="15dp"
             android:background="@null"
-            android:gravity="center"
-            android:text="@string/select_date"
-            android:textColor="@color/color3"
-            android:textSize="15sp" />
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/selectDate"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/color2"
-        android:gravity="center_vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="15dp"
-            android:background="@null"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:text="@string/current_date"
-            android:textColor="@color/color4"
+            android:textColor="@color/current_time_text"
             android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/currentDate"
-            android:layout_width="wrap_content"
+        <Space
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:background="@null"
-            android:gravity="center"
-            android:paddingEnd="15dp"
-            android:paddingStart="15dp"
-            android:textColor="@color/color5"
-            android:textSize="15sp" />
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/color1"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
+            android:layout_weight="1" />
 
         <TextView
+            android:id="@+id/tv_selected_date"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
             android:background="@null"
-            android:gravity="center"
-            android:text="@string/select_time"
-            android:textColor="@color/color3"
+            android:gravity="center_vertical"
+            android:textColor="@color/selected_time_text"
             android:textSize="15sp" />
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/selectTime"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/color2"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:text="@string/select_time"
+        android:textColor="@color/select_title_text"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_time"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/current_time_bg"
         android:gravity="center_vertical">
 
         <TextView
@@ -86,23 +73,26 @@
             android:layout_height="match_parent"
             android:layout_marginStart="15dp"
             android:background="@null"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:text="@string/current_time"
-            android:textColor="@color/color4"
+            android:textColor="@color/current_time_text"
             android:textSize="15sp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/currentTime"
+            android:id="@+id/tv_selected_time"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
             android:background="@null"
-            android:gravity="center"
-            android:paddingEnd="15dp"
-            android:paddingStart="15dp"
-            android:textColor="@color/color5"
+            android:gravity="center_vertical"
+            android:textColor="@color/selected_time_text"
             android:textSize="15sp" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>

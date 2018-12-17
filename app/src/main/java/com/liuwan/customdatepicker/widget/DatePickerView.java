@@ -21,7 +21,11 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * Created by liuwan on 2016/9/28.
+ * 说明：
+ * 作者：liuwan
+ * 添加时间：2016/9/28
+ * 修改人：liuwan
+ * 修改时间：2018/12/17 13:40
  */
 public class DatePickerView extends View {
 
@@ -170,12 +174,12 @@ public class DatePickerView extends View {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setStyle(Style.FILL);
         mPaint.setTextAlign(Align.CENTER);
-        mPaint.setColor(ContextCompat.getColor(context, R.color.text1));
+        mPaint.setColor(ContextCompat.getColor(context, R.color.picker_text_selected));
         //第二个paint
         nPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         nPaint.setStyle(Style.FILL);
         nPaint.setTextAlign(Align.CENTER);
-        nPaint.setColor(ContextCompat.getColor(context, R.color.text2));
+        nPaint.setColor(ContextCompat.getColor(context, R.color.picker_text_unselected));
     }
 
     @Override

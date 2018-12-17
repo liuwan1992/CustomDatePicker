@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/background"
+        android:background="@color/picker_bg"
         android:padding="10dp">
 
         <TextView
@@ -16,8 +16,8 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:padding="10dp"
-            android:text="@string/cancle"
-            android:textColor="@color/text1"
+            android:text="@string/cancel"
+            android:textColor="@color/picker_text_selected"
             android:textSize="16sp" />
 
         <TextView
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="@string/title"
-            android:textColor="@color/text1"
+            android:textColor="@color/picker_text_selected"
             android:textSize="20sp" />
 
         <TextView
@@ -37,7 +37,7 @@
             android:layout_centerVertical="true"
             android:padding="10dp"
             android:text="@string/commit"
-            android:textColor="@color/text1"
+            android:textColor="@color/picker_text_selected"
             android:textSize="16sp" />
 
     </RelativeLayout>
@@ -45,7 +45,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/split_line" />
+        android:background="@color/picker_divider" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:background="@color/background"
+            android:background="@color/picker_bg"
             android:orientation="horizontal"
             android:paddingBottom="15dp"
             android:paddingLeft="20dp"
@@ -74,7 +74,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/year"
-                android:textColor="@color/text2"
+                android:textColor="@color/picker_text_unselected"
                 android:textSize="18sp" />
 
             <com.liuwan.customdatepicker.widget.DatePickerView
@@ -89,7 +89,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/month"
-                android:textColor="@color/text2"
+                android:textColor="@color/picker_text_unselected"
                 android:textSize="18sp" />
 
             <com.liuwan.customdatepicker.widget.DatePickerView
@@ -104,7 +104,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/day"
-                android:textColor="@color/text2"
+                android:textColor="@color/picker_text_unselected"
                 android:textSize="18sp" />
 
             <com.liuwan.customdatepicker.widget.DatePickerView
@@ -120,7 +120,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/hour"
-                android:textColor="@color/text2"
+                android:textColor="@color/picker_text_unselected"
                 android:textSize="18sp" />
 
             <com.liuwan.customdatepicker.widget.DatePickerView
@@ -136,7 +136,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/minute"
-                android:textColor="@color/text2"
+                android:textColor="@color/picker_text_unselected"
                 android:textSize="18sp" />
 
         </LinearLayout>
