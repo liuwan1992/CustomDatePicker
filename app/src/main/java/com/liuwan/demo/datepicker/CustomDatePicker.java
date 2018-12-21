@@ -214,10 +214,10 @@ public class CustomDatePicker implements View.OnClickListener, PickerView.OnSele
         mEndMinute = mEndTime.get(Calendar.MINUTE);
 
         boolean canSpanYear = mBeginYear != mEndYear;
-        boolean canSpanMon = (!canSpanYear) && (mBeginMonth != mEndMonth);
-        boolean canSpanDay = (!canSpanMon) && (mBeginDay != mEndDay);
-        boolean canSpanHour = (!canSpanDay) && (mBeginHour != mEndHour);
-        boolean canSpanMinute = (!canSpanHour) && (mBeginMinute != mEndMinute);
+        boolean canSpanMon = !canSpanYear && mBeginMonth != mEndMonth;
+        boolean canSpanDay = !canSpanMon && mBeginDay != mEndDay;
+        boolean canSpanHour = !canSpanDay && mBeginHour != mEndHour;
+        boolean canSpanMinute = !canSpanHour && mBeginMinute != mEndMinute;
         if (canSpanYear) {
             initDateUnits(MAX_MONTH_UNIT, mBeginTime.getActualMaximum(Calendar.DAY_OF_MONTH), MAX_HOUR_UNIT, MAX_MINUTE_UNIT);
         } else if (canSpanMon) {
@@ -292,7 +292,10 @@ public class CustomDatePicker implements View.OnClickListener, PickerView.OnSele
         int minMonth;
         int maxMonth;
         int selectedYear = mSelectedTime.get(Calendar.YEAR);
-        if (selectedYear == mBeginYear) {
+        if (mBeginYear == mEndYear) {
+            minMonth = mBeginMonth;
+            maxMonth = mEndMonth;
+        } else if (selectedYear == mBeginYear) {
             minMonth = mBeginMonth;
             maxMonth = MAX_MONTH_UNIT;
         } else if (selectedYear == mEndYear) {
@@ -338,7 +341,10 @@ public class CustomDatePicker implements View.OnClickListener, PickerView.OnSele
         int maxDay;
         int selectedYear = mSelectedTime.get(Calendar.YEAR);
         int selectedMonth = mSelectedTime.get(Calendar.MONTH) + 1;
-        if (selectedYear == mBeginYear && selectedMonth == mBeginMonth) {
+        if (mBeginYear == mEndYear && mBeginMonth == mEndMonth) {
+            minDay = mBeginDay;
+            maxDay = mEndDay;
+        } else if (selectedYear == mBeginYear && selectedMonth == mBeginMonth) {
             minDay = mBeginDay;
             maxDay = mSelectedTime.getActualMaximum(Calendar.DAY_OF_MONTH);
         } else if (selectedYear == mEndYear && selectedMonth == mEndMonth) {
@@ -383,7 +389,10 @@ public class CustomDatePicker implements View.OnClickListener, PickerView.OnSele
             int selectedYear = mSelectedTime.get(Calendar.YEAR);
             int selectedMonth = mSelectedTime.get(Calendar.MONTH) + 1;
             int selectedDay = mSelectedTime.get(Calendar.DAY_OF_MONTH);
-            if (selectedYear == mBeginYear && selectedMonth == mBeginMonth && selectedDay == mBeginDay) {
+            if (mBeginYear == mEndYear && mBeginMonth == mEndMonth && mBeginDay == mEndDay) {
+                minHour = mBeginHour;
+                maxHour = mEndHour;
+            } else if (selectedYear == mBeginYear && selectedMonth == mBeginMonth && selectedDay == mBeginDay) {
                 minHour = mBeginHour;
                 maxHour = MAX_HOUR_UNIT;
             } else if (selectedYear == mEndYear && selectedMonth == mEndMonth && selectedDay == mEndDay) {
@@ -429,7 +438,10 @@ public class CustomDatePicker implements View.OnClickListener, PickerView.OnSele
             int selectedMonth = mSelectedTime.get(Calendar.MONTH) + 1;
             int selectedDay = mSelectedTime.get(Calendar.DAY_OF_MONTH);
             int selectedHour = mSelectedTime.get(Calendar.HOUR_OF_DAY);
-            if (selectedYear == mBeginYear && selectedMonth == mBeginMonth && selectedDay == mBeginDay && selectedHour == mBeginHour) {
+            if (mBeginYear == mEndYear && mBeginMonth == mEndMonth && mBeginDay == mEndDay && mBeginHour == mEndHour) {
+                minMinute = mBeginMinute;
+                maxMinute = mEndMinute;
+            } else if (selectedYear == mBeginYear && selectedMonth == mBeginMonth && selectedDay == mBeginDay && selectedHour == mBeginHour) {
                 minMinute = mBeginMinute;
                 maxMinute = MAX_MINUTE_UNIT;
             } else if (selectedYear == mEndYear && selectedMonth == mEndMonth && selectedDay == mEndDay && selectedHour == mEndHour) {
