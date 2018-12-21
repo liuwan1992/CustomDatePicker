@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="picker_bg">#FFFFFF</color>
-    <color name="picker_divider">#11112233</color>
-    <color name="picker_text_selected">#59B29C</color>
-    <color name="picker_text_unselected">#333333</color>
+    <color name="date_picker_bg">#FFFFFF</color>
+    <color name="date_picker_divider">#11112233</color>
+    <color name="date_picker_text_light">#59B29C</color>
+    <color name="date_picker_text_dark">#333333</color>
 
     <color name="main_bg">#F0F0F0</color>
     <color name="select_title_text">#B0B0B0</color>

@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 *.iml
 .gradle
 /local.properties
-/.idea/workspace.xml
-/.idea/libraries
+/.idea
 .DS_Store
 /build
 /captures
@@ -44,8 +42,10 @@ captures/
 
 # Intellij
 *.iml
-.idea/workspace.xml
+.idea
 
 # Keystore files
 *.jks
->>>>>>> cd5c2660bb0c0ee41828c62197c3609d06c633a8
+
+#proxy
+/gradle.properties

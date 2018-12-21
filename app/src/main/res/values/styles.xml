@@ -2,12 +2,12 @@
 
     <style name="AppTheme" parent="android:Theme.Light.NoTitleBar" />
 
-    <style name="time_dialog" parent="android:style/Theme.Dialog">
+    <style name="date_picker_dialog" parent="android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowBackground">@color/picker_bg</item>
+        <item name="android:windowBackground">@color/date_picker_bg</item>
     </style>
 
 </resources>

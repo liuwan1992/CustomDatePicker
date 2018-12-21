@@ -5,7 +5,7 @@ android {
     buildToolsVersion "27.0.3"
 
     defaultConfig {
-        applicationId "com.liuwan.customdatepicker"
+        applicationId "com.liuwan.datepicker"
         minSdkVersion 18
         targetSdkVersion 23
         versionCode 1

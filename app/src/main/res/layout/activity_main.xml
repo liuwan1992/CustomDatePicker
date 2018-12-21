@@ -22,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/current_time_bg"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <TextView
@@ -66,7 +67,8 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/current_time_bg"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
