@@ -24,3 +24,8 @@ Android 自定义日期选择控件
 Ps：我看很多人反馈时间范围的问题，这里特地说明一下，展示的时间范围是由传入参数决定的，注意 CustomDatePicker 的最后两个参数，决定了日期选择的范围。
 
 由于结构变动较大，所以新建了分支：[**update_20181221**](https://github.com/liuwan1992/CustomDatePicker/tree/update_20181221)
+
+&nbsp;  
+效果图：
+
+<img src="https://raw.githubusercontent.com/liuwan1992/CustomDatePicker/update_20181221/CustomDatePicker1.png" width = 30% height = 30% />&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://raw.githubusercontent.com/liuwan1992/CustomDatePicker/update_20181221/CustomDatePicker2.png" width = 30% height = 30% />
